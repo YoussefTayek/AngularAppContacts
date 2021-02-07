@@ -1,0 +1,31 @@
+<br>
+<div class="row" *ngIf="statusContact">
+    <div class="col s12">
+        <form (ngSubmit)="newContact()" *ngIf="statusContact">
+            <div class="row">
+                <div class="input-field col s6">  
+                    <label for="">Name</label>
+                    <i class="fa fa-user prefix"></i>
+                    <input name="name" [(ngModel)]="contact.name" type="text" placeholder="Full name">
+                   
+                </div>
+                <div class="input-field col s6">
+                    <label for="">Phone</label>
+                    <i class="fa fa-mobile prefix"></i>
+                    <input name="phone" [(ngModel)]="contact.phone"  type="text" placeholder="Phone number">
+                </div>
+            </div>
+           
+            <button class="btn-large red" type="submit" >Add contact</button>
+        </form>
+        <p> {{ contact | json }} </p>
+        
+    </div>
+</div>
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large waves-effect waves-light red" (click)="statusContact = !statusContact"><i class="large fa fa-plus"></i></a>
+</div>
+
+
+
+        
